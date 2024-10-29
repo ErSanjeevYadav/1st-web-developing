@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>esunrise Education</title>
+</head>
+<body>
+    <header>
+        <div class="logo">esunrise Education</div>
+        <input type="text" class="search" placeholder="Search...">
+    </header>
+    
+    <main>
+        <section class="hero">
+            <h1>Discover the Future of Learning</h1>
+            <p>Innovative education solutions for everyone.</p>
+            <button>Learn More</button>
+        </section>
+
+        <section class="features">
+            <h2>Features</h2>
+            <div class="feature-item">
+                <h3>Interactive Courses</h3>
+                <p>Engaging learning experiences.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Expert Instructors</h3>
+                <p>Learn from industry leaders.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Community Support</h3>
+                <p>Join a network of learners.</p>
+            </div>
+        </section>
+
+        <section class="image-3d">
+            <img src="3d-image.png" alt="3D Image" class="movable-image">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 esunrise Education. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+￼Enter
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.search {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #007aff;
+    color: #fff;
+}
+
+.features {
+    padding: 20px;
+    text-align: center;
+}
+
+.feature-item {
+    margin: 20px;
+    display: inline-block;
+    width: 30%;
+}
+
+.image-3d {
+    text-align: center;
+    padding: 20px;
+}
+
+.movable-image {
+    width: 300px; /* Adjust size as needed */
+    transition: transform 0.2s;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+}
+
+
+const image = document.querySelector('.movable-image');
+
+image.addEventListener('mousemove', (e) => {
+    const { offsetX, offsetY } = e;
+    const x = (offsetX / image.offsetWidth) * 20 - 10; // Range -10 to 10
+    const y = (offsetY / image.offsetHeight) * 20 - 10; // Range -10 to 10
+    image.style.transform = `translate(${x}px, ${y}px)`;
+});
